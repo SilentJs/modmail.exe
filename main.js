@@ -33,8 +33,8 @@ client.on('message' , (message)=>{
 });
 client.once('ready', () => {
 	console.log('The bot is online !!');
-    client.user.setActivity("Tell me your problems", {
-        type:'CUSTOM_STATUS'
+    client.user.setActivity("to my directmessages", {
+        type:'LISTENING'
     })
     
 });
