@@ -33,10 +33,7 @@ client.on('message' , (message)=>{
 });
 client.once('ready', () => {
 	console.log('The bot is online !!');
-    client.user.setActivity("Playing Khudaicraft", {
-        type:'STREAMING',
-        url:'https://www.twitch.tv/Silentkarambit7'
-    })
+    client.user.setActivity("my directmessages", {type:'LISTENING'}).catch(console.error)
     
 });
 // client.on("message", message => {
