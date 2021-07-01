@@ -33,7 +33,7 @@ client.on('message' , (message)=>{
 });
 client.once('ready', () => {
 	console.log('The bot is online !!');
-    client.user.setActivity("to my directmessages", type:'LISTENING'}).catch(console.error)
+    client.user.setActivity("to my directmessages", {type:'LISTENING'}).catch(console.error)
     
 });
 // client.on("message", message => {
