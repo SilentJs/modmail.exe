@@ -33,6 +33,10 @@ client.on('message' , (message)=>{
 });
 client.once('ready', () => {
 	console.log('The bot is online !!');
+    client.user.setActivity("Tell me your problems !!", {
+        type:'CUSTOM_STATUS',
+        url:''
+    })
     
 });
 // client.on("message", message => {
