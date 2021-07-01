@@ -69,6 +69,12 @@ client.on('message' , (message)=>{
     if(message.content === `${prefix}help`){
         message.channel.send('what should I help you with ?')
     }
+	if(message.content === `${prefix}me`){
+        message.channel.send('srivats is a gay dont you think ? :dog2:')
+    }
+	if(message.content === `${prefix}hello`){
+        message.channel.send('Hello '+ `<@${message.author.id}>`)
+    }
 })
 
 
