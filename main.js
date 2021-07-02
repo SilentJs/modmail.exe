@@ -116,7 +116,7 @@ client.on('message' , (message)=>{
           .setColor(0xFF0000)
           .setDescription(localMsg);
         taggedUser.send(Embed)
-        message.channel.send(`The dm to ${taggedUser} was sent successfully `);
+        message.channel.send(`The dm to ${taggedUser} was sent successfully ✅`);
           break;
       }
 })
