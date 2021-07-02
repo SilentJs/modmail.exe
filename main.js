@@ -68,6 +68,7 @@ client.on("message", message => {
 
 
 client.on('message' , (message)=>{
+	const taggedUser = message.mentions.users.first();
     if(message.content === `${prefix}help`){
         message.channel.send('what should I help you with ?')
     }
