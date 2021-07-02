@@ -1,4 +1,5 @@
 //Modmail.exe v1.2
+///Modmail.exe v1.3
 //Core Source Code "start"
 
 const { greenBright } = require('chalk')
@@ -77,15 +78,24 @@ client.on('message' , (message)=>{
     }
     const N_PREFIX='&'
     if (message.content.startsWith(N_PREFIX + 'massDm')) {
-        let xhannel = client.channels.cache.find(channel => channel.id === '860385121374961715');
+        let xhannel = client.channels.cache.find(channel => channel.id === '860149283448815640');
+        
           args = message.content.split(" ").slice(1);
-          var argresult = args.join(' ');
+          var deprat = args.join(' ');
     
           message.guild.members.cache.forEach(member => {
-            member.send(argresult)
+            let embed = new Discord.MessageEmbed()
+            .setColor("RANDOM")
+            .setTitle("📢ANNOCEMENT📢")
+            .setDescription(deprat)
+            .setFooter(`${member.user.username}` + "#" + `${member.user.discriminator}`)
+            .setTimestamp()
+            member.send(embed)
             .then(xhannel.send(greenBright(` [+] Successfull DM | ${member.user.username}#${member.user.discriminator}`)))
             .catch(e => xhannel.send(yellow(`[+] Retrying | ${member.user.username}#${member.user.discriminator}`)));
           })
         
       }
 })
+
+client.login(process.env.BOT_KEY);
