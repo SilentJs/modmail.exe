@@ -7,7 +7,7 @@ const { yellow } = require('chalk')
 const Discord = require('discord.js');
 const fs = require('fs');
 const client = new Discord.Client();
-const guild = client.guilds.cache.get("859976932782374944);
+const guild = client.guilds.cache.get("859976932782374944");
 const prefix = '& ';
 
 
@@ -56,7 +56,7 @@ client.on("message", message => {
         .setDescription(message.content)
         .setTimestamp()
         .addField("The Code","https://github.com/silentkarambit7/modmail")
-        .setFooter("Modmail v1.2")
+        .setFooter("Modmail v1.3")
         // .setImage("https://cdn.discordapp.com/avatars/449250687868469258/1709ab4f567c56eaa731518ff621747c.png?size=2048")
         .setThumbnail("https://cdn.discordapp.com/attachments/849632345363447829/860013627644575754/report_icon.jpg")
         xhannel.send(jambed);  
