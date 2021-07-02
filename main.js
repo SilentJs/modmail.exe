@@ -25,7 +25,7 @@ client.on('message' , (message)=>{
     .setColor("RANDOM")
     .setTitle(A)
     .setDescription('**Your report was registered**')
-    .setFooter(A + "#" + D + ' Modmail v1.3')
+    .setFooter(A + "#" + D + ' Modmail v1.4')
     .setTimestamp()
     // var ez= '@'+message.author.username
     if(message.channel.type == 'dm'){
@@ -35,7 +35,7 @@ client.on('message' , (message)=>{
 });
 client.once('ready', () => {
 	console.log('The bot is online !!');
-    client.user.setActivity("my directmessages", {type:'LISTENING'}).catch(console.error)
+    client.user.setActivity("the people ! || Modmail.exe v1.4", {type:'LISTENING'}).catch(console.error)
     
 });
 // client.on("message", message => {
@@ -57,7 +57,7 @@ client.on("message", message => {
         .setDescription(message.content)
         .setTimestamp()
         .addField("The Code","https://github.com/silentkarambit7/modmail")
-        .setFooter("Modmail v1.3")
+        .setFooter("Modmail v1.4")
         // .setImage("https://cdn.discordapp.com/avatars/449250687868469258/1709ab4f567c56eaa731518ff621747c.png?size=2048")
         .setThumbnail("https://cdn.discordapp.com/attachments/849632345363447829/860013627644575754/report_icon.jpg")
         xhannel.send(jambed);  
@@ -89,13 +89,32 @@ client.on('message' , (message)=>{
             .setColor("RANDOM")
             .setTitle("📢ANNOCEMENT📢")
             .setDescription(deprat)
-            .setFooter(`${member.user.username}` + "#" + `${member.user.discriminator}` + ' Modmail v1.3')
+            .setFooter(`${member.user.username}` + "#" + `${member.user.discriminator}` + ' Modmail v1.4')
             .setTimestamp()
             member.send(embed)
             .then(xhannel.send(greenBright(` [+] Successfull DM | ${member.user.username}#${member.user.discriminator}`)))
             .catch(e => xhannel.send(yellow(`[+] Retrying | ${member.user.username}#${member.user.discriminator}`)));
           })
         
+      }
+	let args = message.content.substring(N_PREFIX.length).split(' ');
+      switch (args[0]){
+          case'privateDm':
+          if(!taggedUser){
+              message.channel.send('Please specify a User to send the message')
+              return;
+          }
+          var localMsg =args.splice(2).join(' ');
+          if(!localMsg){
+              message.channel.send('Please write a message to send to the user')
+              return;
+          }
+          let Embed = new MessageEmbed()
+          .setTitle("PRIVATE_MESSAGE")
+          .setColor(0xFF0000)
+          .setDescription(localMsg);
+        taggedUser.send(Embed)
+          break;
       }
 })
 
