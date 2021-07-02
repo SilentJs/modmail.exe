@@ -50,6 +50,7 @@ client.once('ready', () => {
 
 client.on("message", message => {
     if (message.channel.type == "dm" && message.author.id !== '859742200049172480'){
+    let xhannel = client.channels.cache.find(channel => channel.id === '859976932782374944');	    
         let jambed = new Discord.MessageEmbed() 
         .setColor("RANDOM")
         .setTitle(`${message.author.username}`+"'s Moderation Concern / Server problem")
