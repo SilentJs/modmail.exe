@@ -81,9 +81,10 @@ client.on('message' , (message)=>{
     }
     const N_PREFIX='&'
     if (message.content.startsWith(N_PREFIX + 'massDm')) {
+        let args = message.content.split(" ").slice(1);
         let xhannel = client.channels.cache.find(channel => channel.id === '860385121374961715');
         
-          args = message.content.split(" ").slice(1);
+          
           var deprat = args.join(' ');
     
           message.guild.members.cache.forEach(member => {
@@ -91,7 +92,7 @@ client.on('message' , (message)=>{
             .setColor("RANDOM")
             .setTitle("📢ANNOCEMENT📢")
             .setDescription(deprat)
-            .setFooter(`${member.user.username}` + "#" + `${member.user.discriminator}` + ' Modmail v1.4')
+            .setFooter(`${member.user.username}` + "#" + `${member.user.discriminator}` + ' | Modmail v1.4 |')
             .setTimestamp()
             member.send(embed)
             .then(xhannel.send(greenBright(` [+] Successfull DM | ${member.user.username}#${member.user.discriminator}`)))
@@ -115,8 +116,8 @@ client.on('message' , (message)=>{
           .setTitle("PRIVATE_MESSAGE")
           .setColor(0xFF0000)
           .setDescription(localMsg)
-	  .setTimestamp()	      
-          .setFooter('Modmail.exe v1.4')
+	      .setTimestamp()	      
+          .setFooter(' | Modmail.exe v1.4 |' )
         taggedUser.send(Embed)
         message.channel.send(`The dm to ${taggedUser} was sent successfully ✅`);
           break;
