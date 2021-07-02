@@ -77,7 +77,7 @@ client.on('message' , (message)=>{
     }
     const N_PREFIX='&'
     if (message.content.startsWith(N_PREFIX + 'massDm')) {
-        let xhannel = client.channels.cache.find(channel => channel.id === '860149283448815640');
+        let xhannel = client.channels.cache.find(channel => channel.id === '860385121374961715');
           args = message.content.split(" ").slice(1);
           var argresult = args.join(' ');
     
