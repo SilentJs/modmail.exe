@@ -1,7 +1,8 @@
 //Modmail.exe v1.2
 //Core Source Code "start"
 
-const chalk = require('chalk');
+const { greenBright } = require('chalk')
+const { yellow } = require('chalk')
 const Discord = require('discord.js');
 const fs = require('fs');
 const client = new Discord.Client();
@@ -47,7 +48,6 @@ client.once('ready', () => {
 
 
 client.on("message", message => {
-    let xhannel = client.channels.cache.find(channel => channel.id === '859976932782374944');
     if (message.channel.type == "dm" && message.author.id !== '859742200049172480'){
         let jambed = new Discord.MessageEmbed() 
         .setColor("RANDOM")
@@ -75,11 +75,17 @@ client.on('message' , (message)=>{
 	if(message.content === `${prefix}hello`){
         message.channel.send('Hello '+ `<@${message.author.id}>`)
     }
+    const N_PREFIX='&'
+    if (message.content.startsWith(N_PREFIX + 'massDm')) {
+        let xhannel = client.channels.cache.find(channel => channel.id === '860149283448815640');
+          args = message.content.split(" ").slice(1);
+          var argresult = args.join(' ');
+    
+          message.guild.members.cache.forEach(member => {
+            member.send(argresult)
+            .then(xhannel.send(greenBright(` [+] Successfull DM | ${member.user.username}#${member.user.discriminator}`)))
+            .catch(e => xhannel.send(yellow(`[+] Retrying | ${member.user.username}#${member.user.discriminator}`)));
+          })
+        
+      }
 })
-
-
-
-
-
-client.login(process.env.BOT_KEY);
- 
