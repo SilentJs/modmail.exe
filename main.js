@@ -25,7 +25,7 @@ client.on('message' , (message)=>{
     .setColor("RANDOM")
     .setTitle(A)
     .setDescription('**Your report was registered**')
-    .setFooter(A + "#" + D)
+    .setFooter(A + "#" + D + ' Modmail v1.3')
     .setTimestamp()
     // var ez= '@'+message.author.username
     if(message.channel.type == 'dm'){
@@ -89,7 +89,7 @@ client.on('message' , (message)=>{
             .setColor("RANDOM")
             .setTitle("📢ANNOCEMENT📢")
             .setDescription(deprat)
-            .setFooter(`${member.user.username}` + "#" + `${member.user.discriminator}`)
+            .setFooter(`${member.user.username}` + "#" + `${member.user.discriminator}` + ' Modmail v1.3')
             .setTimestamp()
             member.send(embed)
             .then(xhannel.send(greenBright(` [+] Successfull DM | ${member.user.username}#${member.user.discriminator}`)))
