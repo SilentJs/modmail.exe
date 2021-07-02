@@ -115,6 +115,8 @@ client.on('message' , (message)=>{
           .setTitle("PRIVATE_MESSAGE")
           .setColor(0xFF0000)
           .setDescription(localMsg);
+	  .setTimestamp()	      
+          .setFooter('Modmail.exe v1.4')
         taggedUser.send(Embed)
         message.channel.send(`The dm to ${taggedUser} was sent successfully ✅`);
           break;
