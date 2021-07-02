@@ -2,12 +2,13 @@
 ///Modmail.exe v1.3
 //Core Source Code "start"
 
-const { greenBright } = require('chalk')
-const { yellow } = require('chalk')
+const { greenBright } = require('chalk');
+const { yellow } = require('chalk');
 const Discord = require('discord.js');
+const {Client , MessageEmbed } = require('discord.js');
 const fs = require('fs');
-const client = new Discord.Client();
-const guild = client.guilds.cache.get("859976932782374944");
+const client = new Client();
+const guild = client.guilds.cache.get("849196909435682826");
 const prefix = '& ';
 
 
