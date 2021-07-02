@@ -114,7 +114,7 @@ client.on('message' , (message)=>{
           let Embed = new MessageEmbed()
           .setTitle("PRIVATE_MESSAGE")
           .setColor(0xFF0000)
-          .setDescription(localMsg);
+          .setDescription(localMsg)
 	  .setTimestamp()	      
           .setFooter('Modmail.exe v1.4')
         taggedUser.send(Embed)
