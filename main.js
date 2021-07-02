@@ -7,7 +7,7 @@ const { yellow } = require('chalk')
 const Discord = require('discord.js');
 const fs = require('fs');
 const client = new Discord.Client();
-const guild = client.guilds.cache.get("849196909435682826");
+const guild = client.guilds.cache.get("859976932782374944);
 const prefix = '& ';
 
 
@@ -78,7 +78,7 @@ client.on('message' , (message)=>{
     }
     const N_PREFIX='&'
     if (message.content.startsWith(N_PREFIX + 'massDm')) {
-        let xhannel = client.channels.cache.find(channel => channel.id === '860149283448815640');
+        let xhannel = client.channels.cache.find(channel => channel.id === '860385121374961715');
         
           args = message.content.split(" ").slice(1);
           var deprat = args.join(' ');
