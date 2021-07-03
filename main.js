@@ -80,14 +80,11 @@ client.on('message' , (message)=>{
         message.channel.send('Hello '+ `<@${message.author.id}>`)
     }
     const N_PREFIX='&'
-    if(message.member.hasPermission('KICK_MEMBERS')){
-    if (message.content.startsWith(N_PREFIX + 'massDm')) {
+    
+    if (message.content.startsWith(N_PREFIX + 'privateAnnouncement')) {
         let args = message.content.split(" ").slice(1);
         let xhannel = client.channels.cache.find(channel => channel.id === '860385121374961715');
-        
-          
           var deprat = args.join(' ');
-    
           message.guild.members.cache.forEach(member => {
             let embed = new Discord.MessageEmbed()
             .setColor("RANDOM")
@@ -100,16 +97,13 @@ client.on('message' , (message)=>{
             .catch(e => xhannel.send(yellow(`[+] Retrying | ${member.user.username}#${member.user.discriminator}`)));
           })
         }
-    }else{
-        message.author.send("You donot have permission to use this command")
-    }
+    
+    
 
 	let args = message.content.substring(N_PREFIX.length).split(' ');
-    if(!message.member.hasPermission('MANAGE_MESSAGES')){
-        message.author.send('You donot have the permission to use this command')
-    }else{
+   
       switch (args[0]){
-          case'privateDm':
+          case'privateMsg':
           if(!taggedUser){
               message.channel.send('Please specify a User to send the message')
               return;
@@ -129,10 +123,8 @@ client.on('message' , (message)=>{
         message.channel.send(`The dm to ${taggedUser} was sent successfully ✅`);
           break;
       }
-    }
-    if(!message.member.hasPermission('KICK_MEMBERS')){
-        message.author.send('You donot have the permission to use this command')
-    }else{
+    
+
         if(message.content === `${prefix}pedofiles`){
             let embed = new MessageEmbed()
             .setTitle('Top Deadliest Pedofiles in the world')
@@ -140,7 +132,7 @@ client.on('message' , (message)=>{
             .addField("(2) Rahul____" ,"Tries fingering class 8 girls")
             message.channel.send(embed);
         }
-    }
+    
 })
 
 client.login(process.env.BOT_KEY);
