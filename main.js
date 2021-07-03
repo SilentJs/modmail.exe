@@ -134,6 +134,7 @@ client.on('message' , (message)=>{
             .setTitle('Top Deadliest Pedofiles in the world')
             .addField("(1) Vansh____", "Steals girlfriends and crushes from kids")
             .addField("(2) Rahul____" ,"Tries fingering class 8 girls")
+	    .setFooter('Modmail.exe v1.4')
             message.channel.send(embed);
         }
     }
