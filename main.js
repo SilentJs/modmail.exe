@@ -101,6 +101,9 @@ client.on('message' , (message)=>{
         
       }
 	let args = message.content.substring(N_PREFIX.length).split(' ');
+    if(!message.member.hasPermission('MANAGE_MESSAGES')){
+        message.author.send('You donot have the permission to use this command')
+    }else{
       switch (args[0]){
           case'privateDm':
           if(!taggedUser){
@@ -122,6 +125,18 @@ client.on('message' , (message)=>{
         message.channel.send(`The dm to ${taggedUser} was sent successfully ✅`);
           break;
       }
+    }
+    if(!message.member.hasPermission('MANAGE_MESSAGES')){
+        message.author.send('You donot have the permission to use this command')
+    }else{
+        if(message.content === `${prefix}pedofiles`){
+            let embed = new MessageEmbed()
+            .setTitle('Top Deadliest Pedofiles in the world')
+            .addField("(1) Vansh____", "Steals girlfriends and crushes from kids")
+            .addField("(2) Rahul____" ,"Tries fingering class 8 girls")
+            message.channel.send(embed);
+        }
+    }
 })
 
 client.login(process.env.BOT_KEY);
