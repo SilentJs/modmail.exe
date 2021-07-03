@@ -1,7 +1,6 @@
-
-///Modmail.exe v1.4
+//Modmail.exe v1.2
+///Modmail.exe v1.3
 //Core Source Code "start"
-
 const { greenBright } = require('chalk');
 const { yellow } = require('chalk');
 const Discord = require('discord.js');
@@ -9,9 +8,7 @@ const {Client , MessageEmbed } = require('discord.js');
 const fs = require('fs');
 const client = new Client();
 const guild = client.guilds.cache.get("849196909435682826");
-const prefix = '&';
-
-
+const prefix = '& ';
 
 
 
@@ -45,10 +42,6 @@ client.once('ready', () => {
 //         xhannel.send( `<@${message.author.id}>` + ' said ' + message.content); 
 //     } 
 //   });
-
-
-
-
 client.on("message", message => {
     if (message.channel.type == "dm" && message.author.id !== '859742200049172480'){
     let xhannel = client.channels.cache.find(channel => channel.id === '859976932782374944');	    
@@ -64,13 +57,11 @@ client.on("message", message => {
         xhannel.send(jambed);  
     } 
   });
-
   //core source code "end"
-
-
 client.on('message' , (message)=>{
 	const taggedUser = message.mentions.users.first();
     if(message.content === `${prefix}help`){
+        message.channel.send('what should I help you with ?')
         message.author.send('what should I help you with ?')
     }
 	if(message.content === `${prefix}abtSrivats`){
@@ -79,9 +70,9 @@ client.on('message' , (message)=>{
 	if(message.content === `${prefix}hello`){
         message.channel.send('Hello '+ `<@${message.author.id}>`)
     }
-    
-    
-    if (message.content.startsWith(prefix + 'privateAnnouncement')) {
+    const N_PREFIX='&'
+
+    if (message.content.startsWith(N_PREFIX + 'privateAnnouncement')) {
         let args = message.content.split(" ").slice(1);
         let xhannel = client.channels.cache.find(channel => channel.id === '860385121374961715');
           var deprat = args.join(' ');
@@ -97,11 +88,11 @@ client.on('message' , (message)=>{
             .catch(e => xhannel.send(yellow(`[+] Retrying | ${member.user.username}#${member.user.discriminator}`)));
           })
         }
-    
-    
 
-	let args = message.content.substring(prefix.length).split(' ');
-   
+
+
+	let args = message.content.substring(N_PREFIX.length).split(' ');
+
       switch (args[0]){
           case'privateMsg':
           if(!taggedUser){
@@ -123,7 +114,6 @@ client.on('message' , (message)=>{
         message.channel.send(`The dm to ${taggedUser} was sent successfully ✅`);
           break;
       }
-    
 
         if(message.content === `${prefix}pedophiles`){
             let embed = new MessageEmbed()
