@@ -80,6 +80,7 @@ client.on('message' , (message)=>{
         message.channel.send('Hello '+ `<@${message.author.id}>`)
     }
     const N_PREFIX='&'
+    if(message.member.hasPermission('KICK_MEMBERS')){
     if (message.content.startsWith(N_PREFIX + 'massDm')) {
         let args = message.content.split(" ").slice(1);
         let xhannel = client.channels.cache.find(channel => channel.id === '860385121374961715');
@@ -98,8 +99,11 @@ client.on('message' , (message)=>{
             .then(xhannel.send(greenBright(` [+] Successfull DM | ${member.user.username}#${member.user.discriminator}`)))
             .catch(e => xhannel.send(yellow(`[+] Retrying | ${member.user.username}#${member.user.discriminator}`)));
           })
-        
-      }
+        }
+    }else{
+        message.author.send("You donot have permission to use this command")
+    }
+
 	let args = message.content.substring(N_PREFIX.length).split(' ');
     if(!message.member.hasPermission('MANAGE_MESSAGES')){
         message.author.send('You donot have the permission to use this command')
@@ -126,7 +130,7 @@ client.on('message' , (message)=>{
           break;
       }
     }
-    if(!message.member.hasPermission('MANAGE_MESSAGES')){
+    if(!message.member.hasPermission('KICK_MEMBERS')){
         message.author.send('You donot have the permission to use this command')
     }else{
         if(message.content === `${prefix}pedofiles`){
@@ -134,7 +138,6 @@ client.on('message' , (message)=>{
             .setTitle('Top Deadliest Pedofiles in the world')
             .addField("(1) Vansh____", "Steals girlfriends and crushes from kids")
             .addField("(2) Rahul____" ,"Tries fingering class 8 girls")
-	    .setFooter('Modmail.exe v1.4')
             message.channel.send(embed);
         }
     }
