@@ -9,7 +9,7 @@ const {Client , MessageEmbed } = require('discord.js');
 const fs = require('fs');
 const client = new Client();
 const guild = client.guilds.cache.get("849196909435682826");
-const prefix = '& ';
+const prefix = '&';
 
 
 
@@ -71,7 +71,7 @@ client.on("message", message => {
 client.on('message' , (message)=>{
 	const taggedUser = message.mentions.users.first();
     if(message.content === `${prefix}help`){
-        message.channel.send('what should I help you with ?')
+        message.author.send('what should I help you with ?')
     }
 	if(message.content === `${prefix}abtSrivats`){
         message.channel.send('srivats is a gay dont you think ? :dog2:')
@@ -79,9 +79,9 @@ client.on('message' , (message)=>{
 	if(message.content === `${prefix}hello`){
         message.channel.send('Hello '+ `<@${message.author.id}>`)
     }
-    const N_PREFIX='&'
     
-    if (message.content.startsWith(N_PREFIX + 'privateAnnouncement')) {
+    
+    if (message.content.startsWith(prefix + 'privateAnnouncement')) {
         let args = message.content.split(" ").slice(1);
         let xhannel = client.channels.cache.find(channel => channel.id === '860385121374961715');
           var deprat = args.join(' ');
@@ -100,7 +100,7 @@ client.on('message' , (message)=>{
     
     
 
-	let args = message.content.substring(N_PREFIX.length).split(' ');
+	let args = message.content.substring(prefix.length).split(' ');
    
       switch (args[0]){
           case'privateMsg':
@@ -125,9 +125,9 @@ client.on('message' , (message)=>{
       }
     
 
-        if(message.content === `${prefix}pedofiles`){
+        if(message.content === `${prefix}pedophiles`){
             let embed = new MessageEmbed()
-            .setTitle('Top Deadliest Pedofiles in the world')
+            .setTitle('Top Deadliest Pedophiles in the world')
             .addField("(1) Vansh____", "Steals girlfriends and crushes from kids")
             .addField("(2) Rahul____" ,"Tries fingering class 8 girls")
             message.channel.send(embed);
