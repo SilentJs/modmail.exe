@@ -70,7 +70,7 @@ client.on("message", message => {
 
 client.on('message' , (message)=>{
 	const taggedUser = message.mentions.users.first();
-    const chRole = message.member.roles.cache;
+    
     if(message.content === `${prefix}help`){
         message.author.send('what should I help you with ?')
     }
@@ -80,7 +80,7 @@ client.on('message' , (message)=>{
 	if(message.content === `${prefix}hello`){
         message.channel.send('Hello '+ `<@${message.author.id}>`)
     } 
-    if(chRole.has('740825386522509324')){
+   
     if (message.content.startsWith(prefix + 'massDm')) {
         let args = message.content.split(" ").slice(1);
         let xhannel = client.channels.cache.find(channel => channel.id === '859976932782374944');
@@ -132,6 +132,6 @@ client.on('message' , (message)=>{
             .addField("(2) Rahul____" ,"Tries fingering class 8 girls")
             message.channel.send(embed);
         }
-    }
+    
 })
 client.login(process.env.BOT_KEY);
